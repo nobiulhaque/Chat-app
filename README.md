@@ -4,13 +4,16 @@ A new Flutter project.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+# Flutter Chat App 💬
 
-A few resources to get you started if this is your first Flutter project:
+A real-time chat application built with:
+- Firebase (Auth, Firestore, FCM)
+- Provider (state management)
+- Flutter Local Notifications
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Features
+✅ User authentication (Firebase Auth)  
+✅ One-to-one messaging with Firestore  
+✅ Push notifications (via FCM + Local Notifications)  
+✅ Provider for state management  
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
