@@ -1,5 +1,5 @@
 
-import 'package:chat_app/provider/auth_provider.dart';
+import 'package:chat_app/provider/provider.dart';
 import 'package:chat_app/services/auth/auth_gate.dart';
 import 'package:chat_app/firebase_options.dart'; 
 import 'package:chat_app/services/notification/notifi_service.dart';
@@ -7,7 +7,7 @@ import 'package:chat_app/theme/light_mode.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:provider/provider.dart';
+import 'package:provider/provider.dart' hide Provider;
 
 Future<void> requestPermissions() async {
   if (await Permission.notification.isDenied) {
@@ -22,9 +22,8 @@ void main() async {
   await NotifiService().initNotification();
 
   runApp(
-    // 🎯 WRAP APP WITH PROVIDER
     ChangeNotifierProvider(
-      create: (context) => AuthProvider(),
+      create: (context) => ChatProvider(),
       child: const MyApp(),
     ),
   );

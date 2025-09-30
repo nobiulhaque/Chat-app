@@ -1,5 +1,3 @@
-// global_chat_notifier.dart - FINAL REVISED IMPLEMENTATION
-
 import 'package:chat_app/services/notification/notifi_service.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';

@@ -2,7 +2,7 @@
 
 import 'package:chat_app/components/user_tile.dart';
 import 'package:chat_app/pages/chat_page.dart';
-import 'package:chat_app/provider/auth_provider.dart';
+import 'package:chat_app/provider/provider.dart';
 import 'package:chat_app/services/auth/auth_service.dart';
 import 'package:chat_app/services/chat/chat_services.dart';
 import 'package:flutter/material.dart';
@@ -29,7 +29,7 @@ class HomePage extends StatelessWidget {
           IconButton(
             onPressed: () async {
               // 1. Call Provider's signOut
-              await Provider.of<AuthProvider>(context, listen: false).signOut();
+              await Provider.of<ChatProvider>(context, listen: false).signOut();
               
               // 2. 🎯 FIX: Clear the navigation stack entirely and push AuthGate.
               // This guarantees immediate visual redirection to the LoginPage.

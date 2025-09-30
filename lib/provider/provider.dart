@@ -1,11 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 
-class AuthProvider with ChangeNotifier {
+class ChatProvider with ChangeNotifier {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   User? _user;
 
-  AuthProvider() {
+  ChatProvider() {
     // Listen to Firebase's auth state changes and update the local state
     _auth.authStateChanges().listen((User? user) {
       _user = user;

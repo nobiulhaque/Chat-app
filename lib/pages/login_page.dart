@@ -11,25 +11,23 @@ class LoginPage extends StatelessWidget {
 
   LoginPage({super.key});
 
-  // Login Method
-  void login(BuildContext context) async {
-    //auth service
-    final authservice = AuthService();
-
-    //try login
-    try {
-      await authservice.signInWithEmailPassword(
-        _emailcontroller.text,
-        _passwordcontroller.text,
-      );
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => HomePage()),
-      );
-    } catch (e) {
-      print("❌ Login failed: $e");
-    }
+// Login Method
+void login(BuildContext context) async {
+  final authservice = AuthService();
+  try {
+    await authservice.signInWithEmailPassword(
+      _emailcontroller.text.trim(),
+      _passwordcontroller.text.trim(),
+    );
+    // ✅ No manual navigation needed
+    // AuthGate + Provider will handle switching to HomePage
+  } catch (e) {
+    print("❌ Login failed: $e");
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text(e.toString())),
+    );
   }
+}
 
   // Register Method
   void register(BuildContext context) {
